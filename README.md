@@ -47,6 +47,14 @@ podendo ser restaurado ou fechado no menu.
 
  
 
-[Baixar o Gertarme.](https://sowbreira-26fe1.firebaseapp.com/gertarme/gertarme.zip)
+## Requerimentos
 
- 
+- Para executar o jogo é necessário Java 11
+- Para rodar uma instância do jogo no Windows execute run.bat
+- Para rodar uma instância do jogo no linux execute run.sh
+
+## Informação técnica
+
+- Construção Maven
+    - mvn clean package
+

@@ -48,6 +48,7 @@ public class ControladorArmazenamento {
 		File file = null;
 
 		if (taskBeanArmazenamento.getNomeArquivo() == null) {
+			gravarArquivoComo(taskBeanArmazenamento);
 			return;
 		} else {
 			file = new File(taskBeanArmazenamento.getNomeArquivo());
@@ -91,7 +92,7 @@ public class ControladorArmazenamento {
 			ClassNotFoundException {
 		Properties properties = new Properties();
 
-		properties.load(new FileInputStream("getarme.properties"));
+		properties.load(new FileInputStream("getarme.ultima_tarefa"));
 		String lastFile = properties.getProperty("ultima_tarefa");
 		if ("".equals(lastFile) || lastFile == null) {
 			return null;
@@ -106,9 +107,9 @@ public class ControladorArmazenamento {
 	private void salvarUltimoAberto(File file) throws IOException {
 		Properties properties = new Properties();
 
-		properties.load(new FileInputStream("getarme.properties"));
+		properties.load(new FileInputStream("getarme.ultima_tarefa"));
 		properties.setProperty("ultima_tarefa", file.getCanonicalPath());
-		properties.store(new FileOutputStream("getarme.properties"),
+		properties.store(new FileOutputStream("getarme.ultima_tarefa"),
 				MainWindow.TITULO);
 	}
 }

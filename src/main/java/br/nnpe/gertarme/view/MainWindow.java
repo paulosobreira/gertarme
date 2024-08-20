@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.Objects;
 
 import javax.swing.ImageIcon;
 import javax.swing.JDesktopPane;
@@ -30,7 +31,7 @@ import br.nnpe.gertarme.model.TaskBeanArmazenamento;
 
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
-	public static final String TITULO = "GERTARME - Gerenciador de Tarefas com Alarme 1.4";
+	public static final String TITULO = "GERTARME - Gerenciador de Tarefas com Alarme 1.5";
 
 	private static boolean tray = true;
 
@@ -77,7 +78,7 @@ public class MainWindow extends JFrame {
 	}
 
 	private void doSystemTray() {
-		Image imageIcon = new ImageIcon("gear.gif").getImage();
+		Image imageIcon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/"+"Gear.gif"))).getImage();
 		PopupMenu menu = new PopupMenu();
 		MenuItem restore = new MenuItem("Restaurar");
 		restore.addActionListener(new ActionListener() {
@@ -194,7 +195,7 @@ public class MainWindow extends JFrame {
 				String msg = "Feito por Paulo Sobreira \n"
 						+ "sowbreira@gmail.com \n"
 						+ "https://sowbreira-26fe1.firebaseapp.com/ \n"
-						+ "Janeiro de 2006 \n" + "Abril de 2023";
+						+ "Janeiro de 2006 ";
 				JOptionPane.showMessageDialog(MainWindow.this, msg, "Sobre",
 						JOptionPane.INFORMATION_MESSAGE);
 			}

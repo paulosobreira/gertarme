@@ -1,2 +1,1 @@
-start javaw -Xms32M -Xmx32M br.nnpe.gertarme.view.MainWindow
-exit
+java -jar target\getarme-jar-with-dependencies.jar
